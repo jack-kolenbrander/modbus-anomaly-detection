@@ -99,3 +99,12 @@ DecisionTreeClassifier(
 - GridSearch can be a valuable tool to tune hyperparameters and configure ML models without extensive manual trial-and-error. 
 - The feature importance results show that the decision tree relied heavily on only a small subset of the selected features, indicating that many features contributed little to the model’s decisions.
 - Decision trees classify well-represented attack types accurately, but they struggle with rare or unique classes. In this scenario, the low recall for UNIT_ENUM appears to be a result of how underrepresented it is in the dataset. 
+
+## References
+
+### Technical Resources
+- **Decision Tree Algorithm**: GeeksforGeeks. ["Decision Tree Algorithm in Machine Learning"](https://www.geeksforgeeks.org/decision-tree/). Accessed December 2024.
+- **Feature Importance**: GeeksforGeeks. ["Understanding Feature Importance and Visualization of Tree Models"](https://www.geeksforgeeks.org/machine-learning/understanding-feature-importance-and-visualization-of-tree-models/#1-decision-tree-feature-importance). Accessed December 2024.
+
+### Dataset
+- **FARAONIC Dataset**: [Modbus TCP Cybersecurity Dataset](https://www.kaggle.com/datasets/dataset-name). Kaggle, 2024.
