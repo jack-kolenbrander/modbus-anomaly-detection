@@ -43,12 +43,13 @@ X_val = df_val[feature_columns].copy()
 y_val = df_val['Classification']
 
 # Create parameter grid
+
 param_grid = {
-    'n_estimators': [100, 200],
-    'max_depth': [15, 20, 30],
-    'min_samples_split': [15, 25],
-    'min_samples_leaf': [2, 5],
-    'bootstrap': [True, False],
+    'n_estimators': [100, 200], # Number of decision trees
+    'max_depth': [15, 20, 30], # Maximum splits from root to leaf per tree
+    'min_samples_split': [15, 25], # Minimum samples required to split
+    'min_samples_leaf': [2, 5], # Mimimum samples required in a leaf node
+    'bootstrap': [True, False], # Bootstrap
     'class_weight': ['balanced', None]  
 }
 
@@ -59,7 +60,7 @@ rfc = RandomForestClassifier(random_state=42)
 grid_search = GridSearchCV(estimator=rfc, param_grid=param_grid, cv=5, scoring='f1_macro', n_jobs=-1, verbose=2)
 # Fit grid search
 grid_search.fit(X_train, y_train)
-
+rfc.fit(X_train, y_train)
 # Output best parameters:
 print(f"Best grid search parameters: {grid_search.best_params_}")
 # Using the best parameters, predict validation set
