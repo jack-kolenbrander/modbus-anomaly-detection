@@ -10,7 +10,8 @@ This repository explores various machine learning techniques for identifying ano
 ```
 modbusAnomalyDetection/
 ├── anomalyDetection/
-│   ├── decisionTree/          # Decision Tree Implementation             
+│   ├── decisionTree/          # Decision Tree Implementation
+│   ├── randomForest/          # Random Forest Implementation         
 ├── ModbusTCP_Dataset/         # Dataset documentation
 └── README.md
 ```
@@ -25,7 +26,8 @@ Each model implementation includes:
 - Documentation
 
 **Current Status:**
-- ✅ Decision Tree - Complete
+- ✅ Decision Tree Classifier - Complete
+- ✅ Random Forest Classifier - Complete
 
 ## Dataset
 
