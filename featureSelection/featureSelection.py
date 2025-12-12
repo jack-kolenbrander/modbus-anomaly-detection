@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 
-def initalize_modbus_dataset(dataset):
+def initialize_modbus_dataset(dataset):
     """
     Function to drop nonvaluable features in the modbus dataset.
     """
@@ -34,7 +34,21 @@ def initalize_modbus_dataset(dataset):
         'TCP_chksum', # TCP Checksum
         'TCP_urgptr', # Used when urgent bit has been set
         'TCP_options', # TCP optional field
+        # Modbus values
+        'ModbusTCPRequest_trans_id', # Modbus transaction ID
+        'ModbusReadDiscreteInputsRequest_reference_number', # Function specific reference numbers, varies
+        'ModbusWriteMultipleCoilsRequest_reference_number', # Function specific reference numbers, varies
+        'ModbusWriteMultipleCoilsResponse_reference_number', # Function specific reference numbers, varies
+        # Timestamp
+        'timestamp'
     ]
+    
+    # Drop columns
+    for col in EXCLUSIONS:
+        if col in df.columns:
+            df = df.drop(columns=col)
+    # Return dataset
+    return df
 
     
 
